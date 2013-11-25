@@ -3271,8 +3271,10 @@
 		var nThs = _fnGetUniqueThs( o, nTheadSize );
 		for ( i=0, iLen=nThs.length ; i<iLen ; i++ )
 		{
-			iVis = _fnVisibleToColumnIndex( o, i );
-			nThs[i].style.width = o.aoColumns[iVis].sWidth;
+		    iVis = _fnVisibleToColumnIndex(o, i);
+		    if (iVis) {
+		        nThs[i].style.width = o.aoColumns[iVis].sWidth;
+		    }
 		}
 		
 		if ( o.nTFoot !== null )
